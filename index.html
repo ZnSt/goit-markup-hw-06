@@ -113,9 +113,14 @@
               </div>
 
               <div class="form-field policy">
-                <input type="checkbox" name="policy" id="policy" />
+                <input
+                  type="checkbox"
+                  name="policy"
+                  id="policy"
+                  class="input-policy visually-hidden"
+                />
                 <label for="policy" class="policy-form"
-                  >Соглашаюсь с рассылкой и принимаю
+                  >Соглашаюсь с рассылкой и принимаю&nbsp
                   <a href="" class="link-policy">Условия договора</a></label
                 >
               </div>
@@ -457,17 +462,12 @@
         </div>
         <form class="follow-email-container">
           <label for="mail" class="follow mail-text">Подпишитесь на рассылку</label>
-          <input type="email" name="mail" id="mail" class="follow-input" placeholder="E-mail" />
           <div class="btn-container">
+            <input type="email" name="mail" id="mail" class="follow-input" placeholder="E-mail" />
             <button type="submit" class="follow-btn">
               Подписаться
-              <svg>
-                <use
-                  class="icon-send"
-                  href="./images/icon-svg/new-sprite.svg#icon-icon-send"
-                  width="24"
-                  height="24"
-                ></use>
+              <svg width="24" height="24" class="icon-send">
+                <use href="./images/icon-svg/new-sprite.svg#icon-icon-send"></use>
               </svg>
             </button>
           </div>

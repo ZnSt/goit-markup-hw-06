@@ -38,6 +38,17 @@ a {
 img {
   display: block;
 }
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  clip: rect(0 0 0 0);
+}
+
 .container {
   margin-left: auto;
   margin-right: auto;
@@ -262,14 +273,12 @@ button {
   border-color: transparent;
   cursor: pointer;
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1) 250ms,
-    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1); */
-  
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .primary-button:hover,
 .primary-button:focus {
   background-color: var(--primary-white-color);
   color: var(--accent-color);
-  
 }
 
 /* Модальное окно */
@@ -323,26 +332,28 @@ button {
 .icon-close {
   width: 11px;
   height: 11px;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.button-close:hover,
+.button-close:focus {
+  fill: var(--accent-color);
 }
 
 /* Разметка фона модалки */
-.form-modal {
-  
-  
-}
+
 .form-item {
-font-family: Roboto;
-font-style: normal;
-font-weight: bold;
-font-size: 20px;
-line-height: 23px;
-text-align: center;
-letter-spacing: 0.03em;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 23px;
+  text-align: center;
+  letter-spacing: 0.03em;
 
-margin-bottom: 12px;
+  margin-bottom: 12px;
 
-color: var(--primary-text-color);
-
+  color: var(--primary-text-color);
 }
 .form-field {
   display: flex;
@@ -350,29 +361,39 @@ color: var(--primary-text-color);
   margin-bottom: 10px;
 }
 .form-text {
-font-family: Roboto;
-text-align: left;
-font-style: normal;
-font-weight: normal;
-font-size: 12px;
-line-height: 0.85;
-letter-spacing: 0.01em;
-display: inline-block;
+  font-family: Roboto;
+  text-align: left;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 0.85;
+  letter-spacing: 0.01em;
+  display: inline-block;
 
-color: var(--secondary-text-color);
+  color: var(--secondary-text-color);
 
-margin-bottom: 4px;
+  margin-bottom: 4px;
+}
+.form-textarea:hover,
+.form-textarea:focus {
+  border-color: var(--accent-color);
 }
 .form-input {
   width: 448px;
   height: 40px;
-  padding: 11px 12px;
+  padding-left: 30px;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
   outline: none;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.form-input:hover {
-  border-color: violet;
+.form-input:hover,
+.form-input:focus {
+  border-color: var(--accent-color);
+}
+.form-input:hover + .icon-field {
+  fill: var(--accent-color);
 }
 .input-wrapper {
   position: relative;
@@ -385,7 +406,6 @@ margin-bottom: 4px;
   margin-left: 12px;
   width: 18px;
   height: 18px;
-  
 }
 .textarea-field {
   display: flex;
@@ -404,19 +424,49 @@ margin-bottom: 4px;
 }
 .form-textarea::placeholder {
   font-family: Roboto;
-font-style: normal;
-font-weight: normal;
-font-size: 12px;
-line-height: 0.85;
-letter-spacing: 0.01em;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 0.85;
+  letter-spacing: 0.01em;
 
-color: rgba(117, 117, 117, 0.5);
-
+  color: rgba(117, 117, 117, 0.5);
 }
-  .policy-form {
-    text-align: left;
+.input-policy:checked + .policy-form:after {
+  transform: translate(16px);
+}
+.policy-form {
+  position: relative;
+  display: flex;
+  align-items: center;
+  text-align: left;
   margin-bottom: 30px;
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+  color: #757575;
 }
+.policy-form::before {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 22px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 50px;
+  margin-right: 5px;
+}
+.policy-form::after {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background-color: var(--accent-color);
+  left: 3px;
+  top: 3px;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .link-policy {
   color: var(--accent-color);
   text-decoration: underline;
@@ -846,6 +896,7 @@ color: rgba(117, 117, 117, 0.5);
 .follow-email-container {
   display: flex;
   flex-direction: column;
+  margin-left: 93px;
 }
 .mail-text {
   width: 219px;
@@ -858,32 +909,33 @@ color: rgba(117, 117, 117, 0.5);
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
   border-radius: 4px;
   background-color: transparent;
+  margin-right: 12px;
+  outline: transparent;
+  color: red;
 }
 .follow-btn {
   position: relative;
-font-family: Roboto;
-font-style: normal;
-font-weight: bold;
-font-size: 16px;
-line-height: 1.87;
-letter-spacing: 0.06em;
-display: inline-block;
-width: 200px;
-height: 50px;
-padding: 10px 29px;
-color: var(--primary-white-color);
-background-color: var(--accent-color);
-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-border-radius: 4px;
-border-color: transparent;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 1.87;
+  letter-spacing: 0.06em;
+  display: inline-block;
+  width: 200px;
+  height: 50px;
+  padding: 10px 29px 10px 15px;
+  color: var(--primary-white-color);
+  background-color: var(--accent-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  border-color: transparent;
+  cursor: pointer;
 }
 
 .icon-send {
   position: absolute;
-  top: 0;
-  right: 0;
-  width: 24px;
-  height: 24px;
+  margin-left: 10px;
 }
 /* Portfolio */
 
