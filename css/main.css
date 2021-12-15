@@ -296,6 +296,7 @@ button {
   left: 50%;
   transform: translate(-50%, -50%);
   border-radius: 10px;
+  padding: 40px;
 
   min-width: 528px;
   min-height: 581px;
@@ -322,6 +323,119 @@ button {
 .icon-close {
   width: 11px;
   height: 11px;
+}
+
+/* Разметка фона модалки */
+.form-modal {
+  
+  
+}
+.form-item {
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 20px;
+line-height: 23px;
+text-align: center;
+letter-spacing: 0.03em;
+
+margin-bottom: 12px;
+
+color: var(--primary-text-color);
+
+}
+.form-field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+.form-text {
+font-family: Roboto;
+text-align: left;
+font-style: normal;
+font-weight: normal;
+font-size: 12px;
+line-height: 0.85;
+letter-spacing: 0.01em;
+display: inline-block;
+
+color: var(--secondary-text-color);
+
+margin-bottom: 4px;
+}
+.form-input {
+  width: 448px;
+  height: 40px;
+  padding: 11px 12px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  outline: none;
+}
+.form-input:hover {
+  border-color: violet;
+}
+.input-wrapper {
+  position: relative;
+}
+.icon-field {
+  position: absolute;
+  top: 50%;
+  left: 0px;
+  transform: translateY(-50%);
+  margin-left: 12px;
+  width: 18px;
+  height: 18px;
+  
+}
+.textarea-field {
+  display: flex;
+  flex-direction: column;
+}
+.form-textarea {
+  width: 448px;
+  height: 120px;
+  margin-bottom: 20px;
+  padding: 12px 16px;
+
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  resize: none;
+  outline: none;
+}
+.form-textarea::placeholder {
+  font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 12px;
+line-height: 0.85;
+letter-spacing: 0.01em;
+
+color: rgba(117, 117, 117, 0.5);
+
+}
+  .policy-form {
+    text-align: left;
+  margin-bottom: 30px;
+}
+.link-policy {
+  color: var(--accent-color);
+  text-decoration: underline;
+}
+.form-btn {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 1.87;
+  letter-spacing: 0.06em;
+
+  padding: 10px 55px;
+  color: var(--primary-white-color);
+  background-color: var(--accent-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  border-color: transparent;
+  cursor: pointer;
 }
 
 /* Конец Hero */
@@ -729,6 +843,48 @@ button {
   margin-left: 70px;
 }
 
+.follow-email-container {
+  display: flex;
+  flex-direction: column;
+}
+.mail-text {
+  width: 219px;
+}
+.follow-input {
+  width: 358px;
+  height: 50px;
+  padding: 15px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  border-radius: 4px;
+  background-color: transparent;
+}
+.follow-btn {
+  position: relative;
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 16px;
+line-height: 1.87;
+letter-spacing: 0.06em;
+display: inline-block;
+width: 200px;
+height: 50px;
+padding: 10px 29px;
+color: var(--primary-white-color);
+background-color: var(--accent-color);
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+border-radius: 4px;
+border-color: transparent;
+}
+
+.icon-send {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 24px;
+  height: 24px;
+}
 /* Portfolio */
 
 /* Кнопки */
